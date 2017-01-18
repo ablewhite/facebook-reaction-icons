@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'fb-background';
+  src: url('../fonts/fb-background.ttf?csue26') format('truetype'), url('../fonts/fb-background.woff?csue26') format('woff'), url('../fonts/fb-background.svg?csue26#fb-background') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fb-foreground';
+  src: url('../fonts/fb-foreground.ttf?csue26') format('truetype'), url('../fonts/fb-foreground.woff?csue26') format('woff'), url('../fonts/fb-foreground.svg?csue26#fb-foreground') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fb-content';
+  src: url('../fonts/fb-content.ttf?hysylj') format('truetype'), url('../fonts/fb-content.woff?hysylj') format('woff'), url('../fonts/fb-content.svg?hysylj#fb-content') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fonts-loaded .fb {
+  visibility: visible;
+}
+.fb {
+  visibility: hidden;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  color: #fddb73;
+  font-family: 'fb-content' !important;
+}
+.fb::before {
+  font-family: 'fb-background' !important;
+  vertical-align: text-top;
+  display: inline;
+  position: absolute;
+  top: 0;
+}
+.fb::after {
+  font-family: 'fb-foreground' !important;
+  display: inline;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+}
+.fb-2x {
+  font-size: 2em;
+}
+.fb-3x {
+  font-size: 3em;
+}
+.fb-4x {
+  font-size: 4em;
+}
+.fb-like::before {
+  content: "\1f44d";
+  color: #5d9ff5;
+}
+.fb-like::after {
+  content: "\1f44d";
+  color: #fff;
+}
+.fb-love::before {
+  content: "\2764";
+  color: #f25268;
+}
+.fb-love::after {
+  content: "\2764";
+  color: #fff;
+}
+.fb-haha {
+  background: radial-gradient(ellipse 32% 18% at 50% 68%, #f25268 0%, #f25268 99%, transparent 100%);
+}
+.fb-haha::before {
+  content: "\1f602";
+}
+.fb-haha::after {
+  content: "\1f602";
+  color: #262c38;
+}
+.fb-wow::before {
+  content: "\1f62f";
+}
+.fb-wow::after {
+  content: "\1f62f";
+  color: #262c38;
+}
+.fb-sad {
+  background: radial-gradient(ellipse 30% 30% at 50% 50%, #262c38 0%, #262c38 99%, transparent 100%);
+}
+.fb-sad::before {
+  content: "\1f613";
+  color: #fddb73;
+}
+.fb-sad::after {
+  content: "\1f613";
+  color: #5890ff;
+}
+.fb-angry {
+  background: linear-gradient(to top, #ffd872 0%, #ffd872 24%, #ec4f65 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fb-angry::after {
+  content: "\1f621";
+  color: #262c38;
+  -webkit-text-fill-color: #262c38;
+}

@@ -1,0 +1,189 @@
+@import "mixins/_background_gradient.less";
+@import "mixins/_for.less";
+@import "variables/_colours.less";
+@import "variables/_unicode.less";
+
+@font-face {
+    font-family: 'fb-background';
+    src:
+        url('../fonts/fb-background.ttf?csue26') format('truetype'),
+        url('../fonts/fb-background.woff?csue26') format('woff'),
+        url('../fonts/fb-background.svg?csue26#fb-background') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fb-foreground';
+    src:
+        url('../fonts/fb-foreground.ttf?csue26') format('truetype'),
+        url('../fonts/fb-foreground.woff?csue26') format('woff'),
+        url('../fonts/fb-foreground.svg?csue26#fb-foreground') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fb-content';
+    src:
+        url('../fonts/fb-content.ttf?hysylj') format('truetype'),
+        url('../fonts/fb-content.woff?hysylj') format('woff'),
+        url('../fonts/fb-content.svg?hysylj#fb-content') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// show icons once fonts are loaded
+.fonts-loaded .fb {
+    visibility: visible;
+}
+
+// common styles
+.fb {
+    // NB: icons hidden by default, otherwise we see background gradients before fonts loaded and applied
+    visibility: hidden;
+
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+
+    color: @facebook_face;
+
+    // noinspection all
+    font-family: 'fb-content' !important;
+}
+
+// ::before pseudo layer
+.fb::before {
+    // noinspection all
+    font-family: 'fb-background' !important;
+    vertical-align: text-top;
+    display: inline;
+    position: absolute;
+    top: 0;
+}
+
+// ::after pseudo layer
+.fb::after {
+    // noinspection all
+    font-family: 'fb-foreground' !important;
+    display: inline;
+    position: absolute;
+    top: 0;
+    // ensure icon is positioned above ::before, not alongside
+    transform: translateX(-100%);
+}
+
+// sizing options
+.fb-2x {
+    font-size: 2em;
+}
+
+.fb-3x {
+    font-size: 3em;
+}
+
+.fb-4x {
+    font-size: 4em;
+}
+
+// thumbs-up
+.fb-like {
+
+    &::before {
+        content: @unicode_facebook_like;
+        color: @facebook_like;
+    }
+
+    &::after {
+        content: @unicode_facebook_like;
+        color: #fff;
+    }
+
+}
+
+// heart
+.fb-love {
+
+    &::before {
+        content: @unicode_facebook_love;
+        color: @facebook_love;
+    }
+
+    &::after {
+        content: @unicode_facebook_love;
+        color: #fff;
+    }
+
+}
+
+// lol
+.fb-haha {
+    background: radial-gradient(ellipse 32% 18% at 50% 68%, @facebook_tongue 0%, @facebook_tongue 99%, transparent 100%);
+
+    &::before {
+        content: @unicode_facebook_haha;
+    }
+
+    &::after {
+        content: @unicode_facebook_haha;
+        color: @facebook_facial_features;
+    }
+
+}
+
+// ooh
+.fb-wow {
+
+    &::before {
+        content: @unicode_facebook_wow;
+    }
+
+    &::after {
+        content: @unicode_facebook_wow;
+        color: @facebook_facial_features;
+    }
+
+}
+
+// sad face with tear
+.fb-sad {
+    background: radial-gradient(ellipse 30% 30% at 50% 50%, @facebook_facial_features 0%, @facebook_facial_features 99%, transparent 100%);
+
+    &::before {
+        content: @unicode_facebook_sad;
+        color: @facebook_face;
+    }
+
+    &::after {
+        content: @unicode_facebook_sad;
+        color: @facebook_tear;
+    }
+
+}
+
+// mr angry
+.fb-angry {
+    background: linear-gradient(to top, @facebook_angry_start 0%, @facebook_angry_start 24%, @facebook_angry_end 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::after {
+        content: @unicode_facebook_angry;
+        color: @facebook_facial_features;
+        -webkit-text-fill-color: @facebook_facial_features;
+    }
+
+}

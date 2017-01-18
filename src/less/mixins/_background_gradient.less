@@ -1,0 +1,24 @@
+.background-gradient(...) {
+
+    .for(@arguments); .-each(@gradient) {
+        //content: @gradient;
+
+        @width: extract(@gradient, 1);
+
+        & when not (@width = 0) {
+            @height: extract(@gradient, 2);
+
+            @x: extract(@gradient, 3);
+            @y: extract(@gradient, 4);
+
+            @colour: extract(@gradient, 5);
+            @red: red(@colour);
+            @green: green(@colour);
+            @blue: blue(@colour);
+
+            background-image+: radial-gradient(ellipse @width @height at @x @y, rgba(@red,@green,@blue, 1) 0%, rgba(@red,@green,@blue, 1) 99%, rgba(@red, @green, @blue, 0) 100%);
+        }
+
+    }
+
+}
