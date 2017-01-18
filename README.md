@@ -18,6 +18,7 @@ popularising the notion of SVG icons :)
 ## Quick start
 
 View `dist\index.html` to preview the icons.
+Demo available at [http://ablewhite.com/facebook-reaction-icons/](http://ablewhite.com/facebook-reaction-icons/).
 
 ## Background
 
